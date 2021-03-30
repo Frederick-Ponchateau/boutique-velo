@@ -25,7 +25,7 @@
 										</a>
 										<a href="/Site/produit">
 											<div class="product-thumb-info-image">
-												<img alt="" class="img-fluid" src="img/products/product-grey-1.jpg">
+												<img alt="" class="img-fluid" src="<?= base_url("site/img/products/product-grey-1.jpg")?>">
 
 											</div>
 										</a>
