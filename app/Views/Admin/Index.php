@@ -52,7 +52,7 @@
 										<div class="card-body bg-light">
 											<div class="image-frame mb-2">
 												<div class="image-frame-wrapper">	
-													<a href="/produit/detail"><img src="<?=base_url("asset/img/products/product-1.jpg")?>" class="img-fluid" alt="Product Short Name" /></a>
+													<a href="/produit/detail"><img src="<?=base_url("admin/img/products/product-1.jpg")?>" class="img-fluid" alt="Product Short Name" /></a>
 												</div>
 											</div>
 											<small><a href="ecommerce-products-form.html" class="ecommerce-sidebar-link text-color-grey text-color-hover-primary text-decoration-none">CATEGORY</a></small>

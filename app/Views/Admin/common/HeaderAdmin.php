@@ -17,42 +17,42 @@
 <link href="https://fonts.googleapis.com/css?family=Poppins:100,300,400,600,700,800,900" rel="stylesheet" type="text/css">
 
 		<!-- Vendor CSS -->
-		<link rel="stylesheet" href="<?=base_url("asset/vendor/bootstrap/css/bootstrap.css")?>" />
-		<link rel="stylesheet" href="<?=base_url("asset/vendor/animate/animate.compat.css")?>">
+		<link rel="stylesheet" href="<?=base_url("admin/vendor/bootstrap/css/bootstrap.css")?>" />
+		<link rel="stylesheet" href="<?=base_url("admin/vendor/animate/animate.compat.css")?>">
 
-		<link rel="stylesheet" href="<?=base_url("asset/vendor/font-awesome/css/all.min.css")?>" />
-		<link rel="stylesheet" href="<?=base_url("asset/vendor/boxicons/css/boxicons.min.css")?>" />
-		<link rel="stylesheet" href="<?=base_url("asset/vendor/magnific-popup/magnific-popup.css")?>" />
-		<link rel="stylesheet" href="<?=base_url("asset/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css")?>" />
+		<link rel="stylesheet" href="<?=base_url("admin/vendor/font-awesome/css/all.min.css")?>" />
+		<link rel="stylesheet" href="<?=base_url("admin/vendor/boxicons/css/boxicons.min.css")?>" />
+		<link rel="stylesheet" href="<?=base_url("admin/vendor/magnific-popup/magnific-popup.css")?>" />
+		<link rel="stylesheet" href="<?=base_url("admin/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css")?>" />
 
 		<!-- Specific Page Vendor CSS -->
-		<link rel="stylesheet" href="<?=base_url("asset/vendor/jquery-ui/jquery-ui.css")?>" />
-		<link rel="stylesheet" href="<?=base_url("asset/vendor/jquery-ui/jquery-ui.theme.css")?>" />
-		<link rel="stylesheet" href="<?=base_url("asset/vendor/select2/css/select2.css")?>" />
-		<link rel="stylesheet" href="<?=base_url("asset/vendor/select2-bootstrap-theme/select2-bootstrap.min.css")?>" />
-		<link rel="stylesheet" href="<?=base_url("asset/vendor/dropzone/basic.css")?>" />
-		<link rel="stylesheet" href="<?=base_url("asset/vendor/dropzone/dropzone.css")?>" />
-		<link rel="stylesheet" href="<?=base_url("asset/vendor/bootstrap-markdown/css/bootstrap-markdown.min.css")?>" />
-		<link rel="stylesheet" href="<?=base_url("asset/vendor/pnotify/pnotify.custom.css")?>" />
+		<link rel="stylesheet" href="<?=base_url("admin/vendor/jquery-ui/jquery-ui.css")?>" />
+		<link rel="stylesheet" href="<?=base_url("admin/vendor/jquery-ui/jquery-ui.theme.css")?>" />
+		<link rel="stylesheet" href="<?=base_url("admin/vendor/select2/css/select2.css")?>" />
+		<link rel="stylesheet" href="<?=base_url("admin/vendor/select2-bootstrap-theme/select2-bootstrap.min.css")?>" />
+		<link rel="stylesheet" href="<?=base_url("admin/vendor/dropzone/basic.css")?>" />
+		<link rel="stylesheet" href="<?=base_url("admin/vendor/dropzone/dropzone.css")?>" />
+		<link rel="stylesheet" href="<?=base_url("admin/vendor/bootstrap-markdown/css/bootstrap-markdown.min.css")?>" />
+		<link rel="stylesheet" href="<?=base_url("admin/vendor/pnotify/pnotify.custom.css")?>" />
 
 		<!--(remove-empty-lines-end)-->
 
 		<!-- Theme CSS -->
-		<link rel="stylesheet" href="<?=base_url("asset/css/theme.css")?>" />
+		<link rel="stylesheet" href="<?=base_url("admin/css/theme.css")?>" />
 
 
 		<!-- Theme Layout -->
-		<link rel="stylesheet" href="<?=base_url("asset/css/layouts/modern.css")?>" />
+		<link rel="stylesheet" href="<?=base_url("admin/css/layouts/modern.css")?>" />
 		<!--(remove-empty-lines-end)-->
 
 
 
 		<!-- Theme Custom CSS -->
-		<link rel="stylesheet" href="<?=base_url("asset/css/custom.css")?>">
+		<link rel="stylesheet" href="<?=base_url("admin/css/custom.css")?>">
 
 		<!-- Head Libs -->
-		<script src="<?=base_url("asset/vendor/modernizr/modernizr.js")?>"></script>
-		<script src="<?=base_url("asset/master/style-switcher/style.switcher.localstorage.js")?>"></script>
+		<script src="<?=base_url("admin/vendor/modernizr/modernizr.js")?>"></script>
+		<script src="<?=base_url("admin/master/style-switcher/style.switcher.localstorage.js")?>"></script>
 
 	</head>
 	<body>
@@ -62,7 +62,7 @@
 			<header class="header header-nav-menu header-nav-links">
 				<div class="logo-container">
 					<a href="../" class="logo">
-<img src="<?=base_url("asset/img/logo-modern.png")?>" class="logo-image" width="90" height="24" alt="Porto Admin" /><img src="<?=base_url("asset/img/logo-default.png")?>" class="logo-image-mobile" width="90" height="41" alt="Porto Admin" />
+<img src="<?=base_url("admin/img/logo-modern.png")?>" class="logo-image" width="90" height="24" alt="Porto Admin" /><img src="<?=base_url("admin/img/logo-default.png")?>" class="logo-image-mobile" width="90" height="41" alt="Porto Admin" />
 					</a>
 					<button class="btn header-btn-collapse-nav d-lg-none" data-toggle="collapse" data-target=".header-nav">
 						<i class="fas fa-bars"></i>
@@ -165,7 +165,12 @@
 				                            </li>
 				                            <li>
 				                                <a class="nav-link" href="/admin/Commande/index">
-				                                    - Liste de Commandes
+				                                    - Liste Commandes
+				                                </a>
+				                            </li>
+											<li>
+				                                <a class="nav-link" href="/admin/User/index">
+				                                    - Liste Utilisateur
 				                                </a>
 				                            </li>
 				                        </ul>

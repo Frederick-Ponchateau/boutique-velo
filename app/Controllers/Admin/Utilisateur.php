@@ -5,9 +5,9 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 
-/**********appel des modeles utile ***************/
+/**********appel des modele utile ***************/
 
-class Produit extends BaseController
+class Utilisateur extends BaseController
 {
 	public function __construct(){
 		parent::__construct();
@@ -19,7 +19,7 @@ class Produit extends BaseController
 		
 
 		echo view('admin/common/HeaderAdmin');
-		echo view('admin/produit');
+		echo view('admin/Utilisateur');
 		echo view('admin/common/FooterAdmin');
 	} 
 	public function edit(){

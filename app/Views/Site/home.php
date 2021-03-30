@@ -15,7 +15,7 @@
 										
 
 										<div class="addtocart-btn-wrapper">
-											<a href="shop-cart.html" class="text-decoration-none addtocart-btn" data-tooltip data-original-title="Ajouter au panier">
+											<a href="/Site/produit" class="text-decoration-none addtocart-btn" data-tooltip data-original-title="Ajouter au panier">
 												<i class="icons icon-bag"></i>
 											</a>
 										</div>
@@ -23,7 +23,7 @@
 										<a href="ajax/shop-product-quick-view.html" class="quick-view text-uppercase font-weight-semibold text-2">
 											QUICK VIEW
 										</a>
-										<a href="shop-product-sidebar-left.html">
+										<a href="/Site/produit">
 											<div class="product-thumb-info-image">
 												<img alt="" class="img-fluid" src="img/products/product-grey-1.jpg">
 
