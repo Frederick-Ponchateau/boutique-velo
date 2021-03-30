@@ -169,7 +169,7 @@
 				                                </a>
 				                            </li>
 											<li>
-				                                <a class="nav-link" href="/admin/User/index">
+				                                <a class="nav-link" href="/admin/Utilisateur/index">
 				                                    - Liste Utilisateur
 				                                </a>
 				                            </li>

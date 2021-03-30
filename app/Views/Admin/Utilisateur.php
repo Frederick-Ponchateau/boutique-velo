@@ -1,11 +1,12 @@
-<section role="main" class="content-body content-body-modern mt-0">
+
+				<section role="main" class="content-body content-body-modern mt-0">
 					<header class="page-header page-header-left-inline-breadcrumb">
-						<h2 class="font-weight-bold text-6">Order #6927 Details</h2>
+						<h2 class="font-weight-bold text-6">Liste des Commandes</h2>
 						<div class="right-wrapper">
 							<ol class="breadcrumbs">
 								<li><span>Home</span></li>
 								<li><span>eCommerce</span></li>
-								<li><span>Orders</span></li>
+								<li><span>Commandes</span></li>
 							</ol>
 					
 							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
@@ -13,128 +14,62 @@
 					</header>
 
 					<!-- start: page -->
-					<form class="order-details action-buttons-fixed" method="post">
-						<div class="row">
-							<div class="col-xl-4 mb-4 mb-xl-0">
-								
-								<div class="card card-modern">
-									<div class="card-header">
-										<h2 class="card-title">General</h2>
-									</div>
-									<div class="card-body">
-										<div class="form-row">
-											<div class="form-group col mb-3">
-												<label>Status</label>
-												<select class="form-control form-control-modern" name="orderStatus" required>
-													<option value="on-hold" selected>En cour</option>
-													<option value="pending">Payment en attente</option>
-													<option value="processing">Terminer</option>
-													
-												</select>
-											</div>
-										</div>
-										<div class="form-row">
-											<div class="form-group col mb-3">
-												<label>Date Created</label>
-												<div class="date-time-field">
-													<div class="date">
-                                                        <label>2019-11-21</label>
-                                                    </div>
-													
+					<div class="row">
+						<div class="col">
+							
+							<div class="card card-modern">
+								<div class="card-body">
+									<div class="datatables-header-footer-wrapper">
+										
+										<table class="table table-ecommerce-simple table-striped mb-0" id="datatable-ecommerce-list" style="min-width: 640px;">
+											<thead>
+												<tr>
+													<th width="3%"><input type="checkbox" name="select-all" class="select-all checkbox-style-1 p-relative top-2" value="" /></th>
+													<th width="8%">ID</th>
+													<th width="28%">Customer Name</th>
+													<th width="18%">Date</th>
+													<th width="18%">Total</th>
+													<th width="15%">Status</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td width="30"><input type="checkbox" name="checkboxRow1" class="checkbox-style-1 p-relative top-2" value="" /></td>
+													<td><a href="/admin/commande/detail"><strong>191</strong></a></td>
+													<td><a href="/admin/commande/detail"><strong>Email Client</strong></a></td>
+													<td>Nov 21, 2019</td>
+													<td>$200</td>
+													<td><span class="ecommerce-status on-hold">On Hold selecte en cour/ en attente /terminer</span></td>
+												</tr>
+												
+											</tbody>
+										</table>
+										<hr class="solid mt-5 opacity-4">
+										<div class="datatable-footer">
+											<div class="row align-items-center justify-content-between mt-3">
+												<div class="col-md-auto order-1 mb-3 mb-lg-0">
+													<div class="d-flex align-items-stretch">
+														<select class="form-control select-style-1 bulk-action mr-3" name="bulk-action" style="min-width: 170px;">
+															<option value="" selected>Bulk Actions</option>
+															<option value="delete">Delete</option>
+														</select>
+														<a href="ecommerce-orders-detail.html" class="bulk-action-apply btn btn-light btn-px-4 py-3 border font-weight-semibold text-color-dark text-3">Apply</a>
+													</div>
+												</div>
+												<div class="col-lg-auto text-center order-3 order-lg-2">
+													<div class="results-info-wrapper"></div>
+												</div>
+												<div class="col-lg-auto order-2 order-lg-3 mb-3 mb-lg-0">
+													<div class="pagination-wrapper"></div>
 												</div>
 											</div>
 										</div>
-										<div class="form-row">
-											<div class="form-group col mb-3">
-												<label>Email</label>
-												<label for="">exemple@email.fr</label>
-											</div>
-										</div>
-									</div>
+									</table>
 								</div>
-
 							</div>
-							<div class="col-xl-8">
-								
-								<div class="card card-modern">
-									<div class="card-header">
-										<h2 class="card-title">Addresses</h2>
-									</div>
-									<div class="card-body">
-										<div class="row">
-											<div class="col-xl-auto mr-xl-5 pr-xl-5 mb-4 mb-xl-0">
-												
-											</div>
-											<div class="col-xl-auto pl-xl-5">
-												
-											</div>
-										</div>
-									</div>
-								</div>
 
-							</div>
 						</div>
-						<div class="row">
-							<div class="col">
-								
-								<div class="card card-modern">
-									<div class="card-header">
-										<h2 class="card-title">Products</h2>
-									</div>
-									<div class="card-body">
-										<div class="table-responsive">
-											<table class="table table-ecommerce-simple table-ecommerce-simple-border-bottom table-striped mb-0" style="min-width: 380px;">
-												<thead>
-													<tr>
-														<th width="8%" class="pl-4">ID</th>
-														<th width="65%">Name</th>
-														<th width="5%" class="text-right">Cost</th>
-														
-														<th width="5%" class="text-right">Total</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td class="pl-4"><a href="ecommerce-products-form.html"><strong>191</strong></a></td>
-														<td><a href="ecommerce-products-form.html"><strong>Product Name Example</strong></a></td>
-														<td class="text-right">$99</td>
-														
-														<td class="text-right">$99</td>
-													</tr>
-													
-												</tbody>
-											</table>
-										</div>
-
-										<div class="row justify-content-end flex-column flex-lg-row my-3">
-											
-											<div class="col-auto">
-												<h3 class="font-weight-bold text-color-dark text-4 mb-3">Order Total</h3>
-												<span class="d-flex align-items-center justify-content-lg-end">
-													<strong class="text-color-dark text-5">$318.00</strong>
-												</span>
-											</div>
-										</div>
-									</div>
-								</div>
-
-							</div>
-						</div>
-						
-						<div class="row action-buttons">
-							<div class="col-12 col-md-auto">
-								<button type="submit" class="submit-button btn btn-primary btn-px-4 py-3 d-flex align-items-center font-weight-semibold line-height-1" data-loading-text="Loading...">
-									<i class="bx bx-save text-4 mr-2"></i> Save 
-								</button>
-							</div>
-							
-							<div class="col-12 col-md-auto ml-md-auto mt-3 mt-md-0">
-								<a href="#" class="delete-button btn btn-danger btn-px-4 py-3 d-flex align-items-center font-weight-semibold line-height-1">
-									<i class="bx bx-trash text-4 mr-2"></i> Cancel
-								</a>
-							</div>
-						</div>
-					</form>
+					</div>
 					<!-- end: page -->
 				</section>
 			</div>
