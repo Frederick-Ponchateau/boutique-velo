@@ -1,14 +1,14 @@
 <?php
 
 namespace App\Controllers\Admin;
-use CodeIgniter\Controller;
+
 use App\Controllers\BaseController;
 
 class Home extends BaseController
 {
 	public function __construct(){
 		parent::__construct();
-		$this->client = \Config\Services::curlrequest();
+		
 	}
 	public function index()
 	{

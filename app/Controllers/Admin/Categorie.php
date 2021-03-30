@@ -2,7 +2,7 @@
 
 
 namespace App\Controllers\Admin;
-use CodeIgniter\Controller;
+
 use App\Controllers\BaseController;
 
 /**********appel des modele utile ***************/
@@ -10,6 +10,9 @@ use App\Controllers\BaseController;
 class Categorie extends BaseController
 {
 	public function __construct(){
+	
+			parent::__construct();
+			
 		
 	}
 	public function index()
