@@ -7,7 +7,7 @@ use App\Controllers\BaseController;
 
 /**********appel des modele utile ***************/
 
-class Produit extends BaseController
+class Commande extends BaseController
 {
 	public function __construct(){
 		
@@ -18,9 +18,15 @@ class Produit extends BaseController
 		
 
 		echo view('admin/common/HeaderAdmin');
-		echo view('admin/produit');
+		echo view('admin/Commande');
 		echo view('admin/common/FooterAdmin');
 	} 
+    public function detail()
+    {
+        echo view('admin/common/HeaderAdmin');
+		echo view('admin/DetailCommande');
+		echo view('admin/common/FooterAdmin');
+    }
 	public function edit(){
 
 	}

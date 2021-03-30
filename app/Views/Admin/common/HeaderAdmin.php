@@ -74,7 +74,7 @@
 							<nav>
 								<ul class="nav" >
 									<li class="">
-									    <a class="nav-link" href="/home/index">
+									    <a class="nav-link" href="/Admin/home/index">
 									        Categorie
 									    </a>    
 									</li>
@@ -135,7 +135,7 @@
 				            
 				                <ul class="nav nav-main">
 				                    <li>
-				                        <a class="nav-link" href="/home/index">
+				                        <a class="nav-link" href="/admin/home/index">
 				                            <i class="bx bx-home-alt" aria-hidden="true"></i>
 				                            <span>Dashboard</span>
 				                        </a>                        
@@ -149,42 +149,25 @@
 				                        <ul class="nav nav-children">
 				                            
 				                            <li>
-				                                <a class="nav-link" href="../admin/produit/index">
+				                                <a class="nav-link" href="/admin/Produit/index">
 				                                    - Ajouter / Modifier Produit
 				                                </a>
 				                            </li>
 				                            <li>
-				                                <a class="nav-link" href="ecommerce-category-list.html">
-				                                    - Categories List
+				                                <a class="nav-link" href="/admin/Categorie/index">
+				                                    - Liste Categorie
 				                                </a>
 				                            </li>
 				                            <li>
-				                                <a class="nav-link" href="ecommerce-category-form.html">
-				                                    - Ajouter / Modifier Category
+				                                <a class="nav-link" href="/admin/Souscategorie/index">
+				                                    - Liste Sous-Categorie
 				                                </a>
 				                            </li>
 				                            <li>
-				                                <a class="nav-link" href="ecommerce-coupons-list.html">
-				                                    - Sous-Categories List
+				                                <a class="nav-link" href="/admin/Commande/index">
+				                                    - Liste de Commandes
 				                                </a>
 				                            </li>
-				                            <li>
-				                                <a class="nav-link" href="ecommerce-coupons-form.html">
-                                                - Ajouter / Modifier Sous-Category
-				                                </a>
-				                            </li>
-				                            <li>
-				                                <a class="nav-link" href="ecommerce-orders-list.html">
-				                                    - List des Commandes
-				                                </a>
-				                            </li>
-				                            
-				                            <li>
-				                                <a class="nav-link" href="ecommerce-customers-list.html">
-				                                    - Customers List
-				                                </a>
-				                            </li>
-				                            
 				                        </ul>
 				                    </li>                   
 				

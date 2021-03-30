@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Admin;
+use CodeIgniter\Controller;
+use App\Controllers\BaseController;
 
 class Home extends BaseController
 {
@@ -15,5 +17,8 @@ class Home extends BaseController
 		echo view('admin/common/HeaderAdmin');
 		echo view('admin/Index');
 		echo view('admin/common/FooterAdmin');
+	}
+	public function categorie(){
+		
 	}
 }

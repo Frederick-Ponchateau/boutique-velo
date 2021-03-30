@@ -37,8 +37,47 @@
 															<textarea class="form-control form-control-modern" name="productDescription" rows="6"></textarea>
 														</div>
 													</div>
+                                                    
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-5 col-xl-3 control-label text-lg-right pt-2 mt-1 mb-0"> Prix (€)</label>
+                                                        <div class="col-lg-7 col-xl-6">
+                                                            <input type="text" class="form-control form-control-modern" name="salePrice" value="" />
+                                                        </div>
+                                                    </div>
+											        
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-5 col-xl-3 control-label text-lg-right pt-2 mt-1 mb-0">Category</label>
+                                                        <div class="col-lg-7 col-xl-6">
+                                                            <select class="form-control mb-3">
+                                                                <option>Option 1</option>
+                                                            </select>
+                                                        </div>
+											        </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-5 col-xl-3 control-label text-lg-right pt-2 mt-1 mb-0">Sous Category</label>
+                                                        <div class="col-lg-7 col-xl-6">
+                                                            <select class="form-control mb-3">
+                                                                <option>Option 1</option>
+                                                            </select>
+                                                        </div>
+											        </div>
+                                                    <div class="form-group row">
+														<label class="col-sm-4 control-label">Disponibilité</label>
+														<div class="col-sm-8">
+															<div class="radio-custom radio-success">
+																<input type="radio" id="radioExample3" name="radioExample">
+																<label for="radioExample3">En Stock</label>
+															</div>
+															<div class="radio-custom radio-danger">
+																<input type="radio" id="radioExample5" name="radioExample">
+																<label for="radioExample5">Rupture de Stock</label>
+															</div>
+														</div>
+													</div>
+                                                    
 												</div>
-											</div>
+                                                
+											</div>		
 										</div>
 									</section>
 								</div>
@@ -70,199 +109,7 @@
 									</section>
 								</div>
 							</div>
-							<div class="row">
-								<div class="col">
-									<section class="card card-modern card-big-info">
-										<div class="card-body">
-											<div class="tabs-modern row" style="min-height: 490px;">
-												<div class="col-lg-2-5 col-xl-1-5">
-													<div class="nav flex-column" id="tab" role="tablist" aria-orientation="vertical">
-											      		<a class="nav-link active" id="price-tab" data-toggle="pill" href="#price" role="tab" aria-controls="price" aria-selected="true">Price</a>
-											      		<a class="nav-link" id="inventory-tab" data-toggle="pill" href="#inventory" role="tab" aria-controls="inventory" aria-selected="false">Inventory</a>
-											      		<a class="nav-link" id="shipping-tab" data-toggle="pill" href="#shipping" role="tab" aria-controls="shipping" aria-selected="false">Shipping</a>
-											      		<a class="nav-link" id="linked-products-tab" data-toggle="pill" href="#linked-products" role="tab" aria-controls="linked-products" aria-selected="false">Linked Products</a>
-											      		<a class="nav-link" id="attributes-tab" data-toggle="pill" href="#attributes" role="tab" aria-controls="attributes">Attributes</a>
-											      		<a class="nav-link" id="advanced-tab" data-toggle="pill" href="#advanced" role="tab" aria-controls="advanced">Advanced</a>
-											    	</div>
-												</div>
-												<div class="col-lg-3-5 col-xl-4-5">
-													<div class="tab-content" id="tabContent">
-											      		<div class="tab-pane fade show active" id="price" role="tabpanel" aria-labelledby="price-tab">
-															<div class="form-group row align-items-center">
-																<label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">Regular Price ($)</label>
-																<div class="col-lg-7 col-xl-6">
-																	<input type="text" class="form-control form-control-modern" name="regularPrice" value="" required />
-																</div>
-															</div>
-															<div class="form-group row align-items-center">
-																<label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">Sale Price ($)</label>
-																<div class="col-lg-7 col-xl-6">
-																	<input type="text" class="form-control form-control-modern" name="salePrice" value="" />
-																</div>
-															</div>
-											      		</div>
-											      		<div class="tab-pane fade" id="inventory" role="tabpanel" aria-labelledby="inventory-tab">
-															<div class="form-group row align-items-center">
-																<label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">SKU</label>
-																<div class="col-lg-7 col-xl-6">
-																	<input type="text" class="form-control form-control-modern" name="sku" value="" required />
-																</div>
-															</div>
-															<div class="form-group row align-items-center">
-																<label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">Manage Stock?</label>
-																<div class="col-lg-7 col-xl-6">
-																	<div class="checkbox">
-																		<label class="my-2">
-																			<input type="checkbox" value="">
-																			Enable stock management at product level
-																		</label>
-																	</div>
-																</div>
-															</div>
-															<div class="form-group row align-items-center">
-																<label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">Stock Status</label>
-																<div class="col-lg-7 col-xl-6">
-																	<select class="form-control form-control-modern" name="stockStatus">
-																		<option value="in-stock" selected>In Stock</option>
-																		<option value="out-of-stock">Out of Stock</option>
-																		<option value="on-backorder">On Backorder</option>
-																	</select>
-																</div>
-															</div>
-															<div class="form-group row align-items-center">
-																<label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">Sold Individually</label>
-																<div class="col-lg-7 col-xl-6">
-																	<div class="checkbox">
-																		<label class="my-2">
-																			<input type="checkbox" value="">
-																			Enable this to only allow one of this item to be bought in a single order
-																		</label>
-																	</div>
-																</div>
-															</div>
-											      		</div>
-											      		<div class="tab-pane fade" id="shipping" role="tabpanel" aria-labelledby="shipping-tab">
-															<div class="form-group row align-items-center">
-																<label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">Weight (oz)</label>
-																<div class="col-lg-7 col-xl-6">
-																	<input type="text" class="form-control form-control-modern" name="weight" value="" />
-																</div>
-															</div>
-															<div class="form-group row align-items-center">
-																<label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">Dimensions (in)</label>
-																<div class="col-lg-7 col-xl-6">
-																	<div class="row">
-																		<div class="col-xl-4 mb-3 mb-xl-0">
-																			<input type="text" class="form-control form-control-modern" name="dimensionsLength" value="" placeholder="Length" />
-																		</div>
-																		<div class="col-xl-4 mb-3 mb-xl-0">
-																			<input type="text" class="form-control form-control-modern" name="dimensionsWidth" value="" placeholder="Width" />
-																		</div>
-																		<div class="col-xl-4">
-																			<input type="text" class="form-control form-control-modern" name="dimensionsHeight" value="" placeholder="Height" />
-																		</div>
-																	</div>
-																</div>
-															</div>
-															<div class="form-group row align-items-center">
-																<label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">Shipping Class</label>
-																<div class="col-lg-7 col-xl-6">
-																	<select class="form-control form-control-modern" name="shippingclass">
-																		<option value="in-stock" selected>No Shipping Class</option>
-																		<option value="out-of-stock">International</option>
-																		<option value="on-backorder">National</option>
-																	</select>
-																</div>
-															</div>
-											      		</div>
-											      		<div class="tab-pane fade" id="linked-products" role="tabpanel" aria-labelledby="linked-products-tab">
-															<div class="form-group row align-items-center">
-																<label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">Upsells</label>
-																<div class="col-lg-7 col-xl-6">
-																	<select multiple data-plugin-selectTwo class="form-control form-control-modern" name="upSells" data-plugin-options='{ "placeholder": "Search for a product..." }'>
-																		<option value=""></option>
-																		<option value="product1">Porto Bag</option>
-																		<option value="product2">Porto Shoes</option>
-																		<option value="product3">Porto Jacket</option>
-																	</select>
-																</div>
-															</div>
-															<div class="form-group row align-items-center">
-																<label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">Cross-sells</label>
-																<div class="col-lg-7 col-xl-6">
-																	<select multiple data-plugin-selectTwo class="form-control form-control-modern" name="crossSells" data-plugin-options='{ "placeholder": "Search for a product..." }'>
-																		<option value=""></option>
-																		<option value="product1">Porto Bag</option>
-																		<option value="product2">Porto Shoes</option>
-																		<option value="product3">Porto Jacket</option>
-																	</select>
-																</div>
-															</div>
-											      		</div>
-											      		<div class="tab-pane fade" id="attributes" role="tabpanel" aria-labelledby="attributes-tab">
-															<div class="ecommerce-attributes-wrapper">
-																<div class="form-group row justify-content-center ecommerce-attribute-row">
-																	<div class="col-xl-3">
-																		<label class="control-label">Name</label>
-																		<input type="text" class="form-control form-control-modern" name="attName" value="Size" />
-																		<div class="checkbox mt-3 mb-3 mb-lg-0">
-																			<label class="my-2">
-																				<input type="checkbox" name="attVisible" value="1" checked>
-																				Visible on the product page
-																			</label>
-																		</div>
-																	</div>
-																	<div class="col-xl-6">
-																		<a href="#" class="ecommerce-attribute-remove text-color-danger float-right">Remove</a>
-																		<label class="control-label">Value(s)</label>
-																		<textarea class="form-control form-control-modern" name="attValue" rows="4" placeholder="Enter some text, or some attributes by | separating values">Small|Medium|Big</textarea>
-																	</div>
-																</div>
-																<div class="form-group row justify-content-center ecommerce-attribute-row">
-																	<div class="col-xl-3">
-																		<label class="control-label">Name</label>
-																		<input type="text" class="form-control form-control-modern" name="attName" value="Color" />
-																		<div class="checkbox mt-3 mb-3 mb-lg-0">
-																			<label class="my-2">
-																				<input type="checkbox" name="attVisible" value="1" checked>
-																				Visible on the product page
-																			</label>
-																		</div>
-																	</div>
-																	<div class="col-xl-6">
-																		<a href="#" class="ecommerce-attribute-remove text-color-danger float-right">Remove</a>
-																		<label class="control-label">Value(s)</label>
-																		<textarea class="form-control form-control-modern" name="attValue" rows="4" placeholder="Enter some text, or some attributes by | separating values">Blue|Red|Green</textarea>
-																	</div>
-																</div>
-															</div>
-															<div class="row justify-content-center mt-4">
-																<div class="col-xl-9 text-right">
-																	<a href="#" class="ecommerce-attribute-add-new btn btn-primary btn-px-4 btn-py-2">+ Add New</a>
-																</div>
-															</div>
-											      		</div>
-											      		<div class="tab-pane fade" id="advanced" role="tabpanel" aria-labelledby="advanced-tab">
-															<div class="form-group row">
-																<label class="col-lg-5 col-xl-3 control-label text-lg-right pt-2 mt-1 mb-0">Purchase Note</label>
-																<div class="col-lg-7 col-xl-6">
-																	<textarea class="form-control form-control-modern" name="purchaseNote" rows="6"></textarea>
-																</div>
-															</div>
-															<div class="form-group row align-items-center">
-																<label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">Menu Order</label>
-																<div class="col-lg-7 col-xl-6">
-																	<input type="text" class="form-control form-control-modern" name="menuOrder" value="" />
-																</div>
-															</div>
-											      		</div>
-											    	</div>
-												</div>
-											</div>
-										</div>
-									</section>
-								</div>
-							</div>
+							
 							<div class="row action-buttons">
 								<div class="col-12 col-md-auto">
 									<button type="submit" class="submit-button btn btn-primary btn-px-4 py-3 d-flex align-items-center font-weight-semibold line-height-1" data-loading-text="Loading...">

@@ -7,7 +7,7 @@ use App\Controllers\BaseController;
 
 /**********appel des modele utile ***************/
 
-class Produit extends BaseController
+class Souscategorie extends BaseController
 {
 	public function __construct(){
 		
@@ -18,7 +18,7 @@ class Produit extends BaseController
 		
 
 		echo view('admin/common/HeaderAdmin');
-		echo view('admin/produit');
+		echo view('admin/SousCategorie');
 		echo view('admin/common/FooterAdmin');
 	} 
 	public function edit(){
