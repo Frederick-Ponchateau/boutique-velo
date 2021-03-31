@@ -1,11 +1,11 @@
 <section role="main" class="content-body content-body-modern mt-0">
 					<header class="page-header page-header-left-inline-breadcrumb">
-						<h2 class="font-weight-bold text-6">Categories</h2>
+						<h2 class="font-weight-bold text-6"><?=$page_title?></h2>
 						<div class="right-wrapper">
 							<ol class="breadcrumbs">
 								<li><span>Home</span></li>
 								<li><span>eCommerce</span></li>
-								<li><span>Categories</span></li>
+								<li><span><?=$page_title?></span></li>
 							</ol>
 					
 							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
@@ -61,26 +61,7 @@
 												endif?>
 											</tbody>
 										</table>
-										<hr class="solid mt-5 opacity-4">
-										<div class="datatable-footer">
-											<div class="row align-items-center justify-content-between mt-3">
-												<div class="col-md-auto order-1 mb-3 mb-lg-0">
-													<div class="d-flex align-items-stretch">
-														<select class="form-control select-style-1 bulk-action mr-3" name="bulk-action" style="min-width: 170px;">
-															<option value="" selected>Bulk Actions</option>
-															<option value="delete">Delete</option>
-														</select>
-														<a href="#" class="bulk-action-apply btn btn-light btn-px-4 py-3 border font-weight-semibold text-color-dark text-3">Apply</a>
-													</div>
-												</div>
-												<div class="col-lg-auto text-center order-3 order-lg-2">
-													<div class="results-info-wrapper"></div>
-												</div>
-												<div class="col-lg-auto order-2 order-lg-3 mb-3 mb-lg-0">
-													<div class="pagination-wrapper"></div>
-												</div>
-											</div>
-										</div>
+										
 									</table>
 								</div>
 							</div>

@@ -1,11 +1,11 @@
 <section role="main" class="content-body content-body-modern mt-0">
 					<header class="page-header page-header-left-inline-breadcrumb">
-						<h2 class="font-weight-bold text-6">Sous-Categories</h2>
+						<h2 class="font-weight-bold text-6"><?=$page_title?></h2>
 						<div class="right-wrapper">
 							<ol class="breadcrumbs">
 								<li><span>Home</span></li>
 								<li><span>eCommerce</span></li>
-								<li><span>Sous-Categories</span></li>
+								<li><span><?=$page_title?></span></li>
 							</ol>
 					
 							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
@@ -19,51 +19,49 @@
 							<div class="card card-modern">
 								<div class="card-body">
 									<div class="datatables-header-footer-wrapper">
-										<div class="datatable-header">
-											<div class="row align-items-center mb-3">
-												<div class="col-12 col-lg-auto mb-3 mb-lg-0">
-													<a href="ecommerce-category-form.html" class="btn btn-primary btn-md font-weight-semibold btn-py-2 px-4">+ Add Category</a>
+										<form action="<?=base_url("Admin/Souscategorie/edit")?>" method="POST">
+										<input type="hidden" value="create" name='save'>
+											<div class="datatable-header">
+												<div class="row align-items-center mb-3">
+													<div class="col-12 col-lg-auto mb-3 mb-lg-0">
+														<input type="texte" class="form-control" name="nomSousCategory" placeholder="Sous-Categorie">
+													</div>
+													<div class="col-12 col-lg-auto mb-3 mb-lg-0">
+														<button type="submit" class="btn btn-primary btn-md font-weight-semibold btn-py-2 px-4">+ Add Sous Category</button>
+													</div>
 												</div>
 											</div>
-										</div>
+										</form>
 										<table class="table table-ecommerce-simple table-striped mb-0" id="datatable-ecommerce-list" style="min-width: 550px;">
 											<thead>
 												<tr>
-													<th width="4%"><input type="checkbox" name="select-all" class="select-all checkbox-style-1 p-relative top-2" value="" /></th>
 													
-													<th width="43%">Nom</th>
+													<th width="60%">Nom</th>
 													
-													<th width="43%">Modifier / Supprimé</th>
+													<th width="40%">Modifier / Supprimé</th>
 												</tr>
 											</thead>
 											<tbody>
+											<?php if(isset($sousCategorie)):
+														foreach($sousCategorie as $categorie):?>
+											
 												<tr>
-													<td width="30"><input type="checkbox" name="checkboxRow1" class="checkbox-style-1 p-relative top-2" value="" /></td>
-													<td>Category Name Example</td>
-													<td>Modifier / Supprimé</td>
+													<form action="<?=base_url("Admin/Souscategorie/edit/".$categorie['sous_categorie_id'])?>" method="POST">
+														<?php if(isset($categorie['sous_categorie_id'])){   ?>
+                                               			 <input type="hidden" value="update" name='save'>
+                                                		<?php }?>
+														<td><input type="text" name="nomSousCategory" class="form-control"value="<?=$categorie["sous_categorie_name"]?>" placeholder="<?=$categorie["sous_categorie_name"]?>" aria-label="Recipient's username with two button addons"></td>
+														<td> <button class="btn btn-outline-success" type="submit">Update</button>
+															<a class="btn btn-outline-danger" href="<?=base_url("Admin/Souscategorie/delete/".$categorie['sous_categorie_id'])?>" type="button">X</a>
+															</td>
+													</form>	
 												</tr>
+
+												<?php endforeach;
+												endif?>
 											</tbody>
 										</table>
-										<hr class="solid mt-5 opacity-4">
-										<div class="datatable-footer">
-											<div class="row align-items-center justify-content-between mt-3">
-												<div class="col-md-auto order-1 mb-3 mb-lg-0">
-													<div class="d-flex align-items-stretch">
-														<select class="form-control select-style-1 bulk-action mr-3" name="bulk-action" style="min-width: 170px;">
-															<option value="" selected>Bulk Actions</option>
-															<option value="delete">Delete</option>
-														</select>
-														<a href="#" class="bulk-action-apply btn btn-light btn-px-4 py-3 border font-weight-semibold text-color-dark text-3">Apply</a>
-													</div>
-												</div>
-												<div class="col-lg-auto text-center order-3 order-lg-2">
-													<div class="results-info-wrapper"></div>
-												</div>
-												<div class="col-lg-auto order-2 order-lg-3 mb-3 mb-lg-0">
-													<div class="pagination-wrapper"></div>
-												</div>
-											</div>
-										</div>
+										
 									</table>
 								</div>
 							</div>

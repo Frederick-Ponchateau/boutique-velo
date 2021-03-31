@@ -28,7 +28,7 @@ class Categorie extends BaseController
 			'tableCategorie' => $this->categorieModel->orderBy('category_name','ASC')->findAll()
 	   ];
 
-		echo view('admin/common/HeaderAdmin');
+		echo view('admin/common/HeaderAdmin',$data);
 		echo view('admin/categorie',$data);
 		echo view('admin/common/FooterAdmin');
 	} 
