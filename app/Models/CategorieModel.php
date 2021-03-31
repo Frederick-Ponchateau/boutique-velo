@@ -3,6 +3,6 @@
 use CodeIgniter\Model;
  
 class CategorieModel extends Model{
-    protected $table = 'products';
+    protected $table = 'categories';
     protected $allowedFields = ['category_id','category_name','Date'];
 }

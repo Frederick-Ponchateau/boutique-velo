@@ -19,29 +19,46 @@
 							<div class="card card-modern">
 								<div class="card-body">
 									<div class="datatables-header-footer-wrapper">
-										<div class="datatable-header">
-											<div class="row align-items-center mb-3">
-												<div class="col-12 col-lg-auto mb-3 mb-lg-0">
-													<a href="ecommerce-category-form.html" class="btn btn-primary btn-md font-weight-semibold btn-py-2 px-4">+ Add Category</a>
+										<form action="<?=base_url("Admin/Categorie/edit")?>" method="POST">
+										<input type="hidden" value="create" name='save'>
+											<div class="datatable-header">
+												<div class="row align-items-center mb-3">
+													<div class="col-12 col-lg-auto mb-3 mb-lg-0">
+														<input type="texte" class="form-control" name="nomCategory" placeholder="Categorie">
+													</div>
+													<div class="col-12 col-lg-auto mb-3 mb-lg-0">
+														<button type="submit" class="btn btn-primary btn-md font-weight-semibold btn-py-2 px-4">+ Add Category</button>
+													</div>
 												</div>
 											</div>
-										</div>
+										</form>
 										<table class="table table-ecommerce-simple table-striped mb-0" id="datatable-ecommerce-list" style="min-width: 550px;">
 											<thead>
 												<tr>
-													<th width="4%"><input type="checkbox" name="select-all" class="select-all checkbox-style-1 p-relative top-2" value="" /></th>
 													
-													<th width="43%">Nom</th>
+													<th width="60%">Nom</th>
 													
-													<th width="43%">Modifier / Supprimé</th>
+													<th width="40%">Modifier / Supprimé</th>
 												</tr>
 											</thead>
 											<tbody>
+											<?php if(isset($tableCategorie)):
+														foreach($tableCategorie as $categorie):?>
+											
 												<tr>
-													<td width="30"><input type="checkbox" name="checkboxRow1" class="checkbox-style-1 p-relative top-2" value="" /></td>
-													<td>Category Name Example</td>
-													<td>Modifier / Supprimé</td>
+													<form action="<?=base_url("Admin/Categorie/edit/".$categorie['category_id'])?>" method="POST">
+														<?php if(isset($categorie['category_id'])){   ?>
+                                               			 <input type="hidden" value="update" name='save'>
+                                                		<?php }?>
+														<td><input type="text" name="nomCategory" class="form-control"value="<?=$categorie["category_name"]?>" placeholder="<?=$categorie["category_name"]?>" aria-label="Recipient's username with two button addons"></td>
+														<td> <button class="btn btn-outline-success" type="submit">Update</button>
+															<a class="btn btn-outline-danger" href="<?=base_url("Admin/Categorie/delete/".$categorie['category_id'])?>" type="button">X</a>
+															</td>
+													</form>	
 												</tr>
+
+												<?php endforeach;
+												endif?>
 											</tbody>
 										</table>
 										<hr class="solid mt-5 opacity-4">
