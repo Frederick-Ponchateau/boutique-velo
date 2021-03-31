@@ -78,11 +78,7 @@
 									        Categorie
 									    </a>    
 									</li>
-									<li class="dropdown">
-									    <a class="nav-link dropdown-toggle" href="/home/index">
-									        Layouts
-									    </a>									    
-									</li>
+									
 								</ul>
 							</nav>
 						</div>
@@ -149,7 +145,7 @@
 				                        <ul class="nav nav-children">
 				                            
 				                            <li>
-				                                <a class="nav-link" href="/admin/Produit/index">
+				                                <a class="nav-link" href="/admin/Home/edit">
 				                                    - Ajouter / Modifier Produit
 				                                </a>
 				                            </li>

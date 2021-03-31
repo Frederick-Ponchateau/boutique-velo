@@ -36,7 +36,11 @@
 									</div>
 									<div class="card-body">
 										<ul class="list list-unstyled mb-0">
-											<li><a href="#">Smart TVs</a></li>
+										<?php if(isset($tableCategorie)): 
+												 foreach($tableCategorie as $categorie):?>
+											<li><a href="<?=base_url("Admin/Home/categorie?id=").$categorie["category_id"]?>"><?=$categorie["category_name"]?></a></li>
+											<?php endforeach;
+											endif?>
 										<!-- categorie -->
 										</ul>
 									</div>
@@ -46,7 +50,9 @@
 						</div>
 						<div class="col-lg-3-5 col-xl-4-5">
 							<div class="row row-gutter-sm">
-								
+								<?php if(isset($tableProduit)):
+									foreach($tableProduit as $produit):
+										?>
 								<div class="col-sm-6 col-xl-3 mb-4">
 									<div class="card card-modern card-modern-alt-padding">
 										<div class="card-body bg-light">
@@ -64,7 +70,10 @@
 											</div>
 										</div>
 									</div>
-								</div>								
+								</div>	
+								<?php endforeach;
+								endif?>
+
 							</div>
 							<div class="row row-gutter-sm justify-content-between">
 								<div class="col-lg-auto order-2 order-lg-1">
