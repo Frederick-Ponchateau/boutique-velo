@@ -15,9 +15,9 @@ class Home extends BaseController
 		$this->categorieModel = new CategorieModel();
 		$this->produitModel = new ProduitModel();
 	}
-	public function index($id=null)
+	public function index()
 	{
-		$listeCategorie = $this->categorieModel->orderBy('category_name','ASC')->findAll();
+		$listeCategorie = $this->categorieModel;
 
 		$listeProduit = $this->produitModel->orderBy('product_id','DESC')->paginate(8);
 		
@@ -32,8 +32,19 @@ class Home extends BaseController
 		echo view('admin/Index',$data);
 		echo view('admin/common/FooterAdmin');
 	}
-	public function categorie(){
-		
+	public function categorie($id=null){
+		$listeProduit = $this->produitModel->where("category_id",$id)->orderBy('product_id','DESC')->paginate(8);
+		$listeCategorie = $this->categorieModel;
+
+		$data = [
+			'page_title' => 'Categorie',
+			'tableCategorie' => $listeCategorie,
+			'tableProduit' => $listeProduit
+	   ];
+
+		echo view('admin/common/HeaderAdmin');
+		echo view('admin/Index',$data);
+		echo view('admin/common/FooterAdmin');
 	}
 	public function edit(){
 

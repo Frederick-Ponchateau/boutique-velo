@@ -1,3 +1,4 @@
+							<?php  $categorie= null; ?>
 								<section role="main" class="content-body content-body-modern mt-0">
 					<header class="page-header page-header-left-inline-breadcrumb">
 						<h2 class="font-weight-bold text-6">Products</h2>						
@@ -37,8 +38,9 @@
 									<div class="card-body">
 										<ul class="list list-unstyled mb-0">
 										<?php if(isset($tableCategorie)): 
-												 foreach($tableCategorie as $categorie):?>
-											<li><a href="<?=base_url("Admin/Home/categorie?id=").$categorie["category_id"]?>"><?=$categorie["category_name"]?></a></li>
+										$listeCategorie = $tableCategorie->orderBy('category_name','ASC')->findAll();
+												 foreach($listeCategorie as $categorie):?>
+											<li><a href="<?=base_url("Admin/Home/categorie/".$categorie["category_id"])?>"><?=$categorie["category_name"]?></a></li>
 											<?php endforeach;
 											endif?>
 										<!-- categorie -->
@@ -52,21 +54,21 @@
 							<div class="row row-gutter-sm">
 								<?php if(isset($tableProduit)):
 									foreach($tableProduit as $produit):
+										$categorie = $tableCategorie->where("category_id",$produit["category_id"])->first();
 										?>
 								<div class="col-sm-6 col-xl-3 mb-4">
 									<div class="card card-modern card-modern-alt-padding">
 										<div class="card-body bg-light">
 											<div class="image-frame mb-2">
 												<div class="image-frame-wrapper">	
-													<a href="/produit/detail"><img src="<?=base_url("admin/img/products/product-1.jpg")?>" class="img-fluid" alt="Product Short Name" /></a>
+													<a href="<?=base_url("admin/Home/edit/".$produit["product_id"] )?>"><img src="<?=base_url("admin/img/products/product-1.jpg")?>" class="img-fluid" alt="Product Short Name" /></a>
 												</div>
 											</div>
-											<small><a href="ecommerce-products-form.html" class="ecommerce-sidebar-link text-color-grey text-color-hover-primary text-decoration-none">CATEGORY</a></small>
-											<h4 class="text-4 line-height-2 mt-0 mb-2"><a href="ecommerce-products-form.html" class="ecommerce-sidebar-link text-color-dark text-color-hover-primary text-decoration-none">Product Short Name</a></h4>
+											<small><a href="<?=base_url("Admin/Home/categorie/").$categorie["category_id"]?>" class="ecommerce-sidebar-link text-color-grey text-color-hover-primary text-decoration-none"><?=$categorie["category_name"]?></a></small>
+											<h4 class="text-4 line-height-2 mt-0 mb-2"><a href="ecommerce-products-form.html" class="ecommerce-sidebar-link text-color-dark text-color-hover-primary text-decoration-none"><?=$produit["product_name"]?></a></h4>
 											
 											<div class="product-price">
-												
-												<div class="sale-price">$49.00</div>
+												<div class="sale-price"><?=$produit["price"]?></div>
 											</div>
 										</div>
 									</div>
