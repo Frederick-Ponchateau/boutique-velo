@@ -142,8 +142,22 @@
 												<nav class="collapse w-100">
 													<ul class="nav nav-pills w-100" id="mainNav">
 														<li class="dropdown">
-															<a class="dropdown-item dropdown-toggle" href="index.html">Categorie</a>	
+															<a class="dropdown-item dropdown-toggle" href="<?=base_url("Site/home/index")?>">Categories</a>
 														</li>
+															<button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																<span class="sr-only">Toggle Dropdown</span>
+															</button>
+															<div class="dropdown-menu">
+															<?php if(isset($tableCategorie)): 
+															$listeCategorie = $tableCategorie->orderBy('category_name','ASC')->findAll();
+																	foreach($listeCategorie as $categorie):?>
+																<div role="separator" class="dropdown-divider"></div>
+																<li><a class="dropdown-item" href="<?=base_url("Site/Home/categorie/".$categorie["category_id"])?>"><?=$categorie["category_name"]?></a></li>
+																<?php endforeach;
+																endif?>
+															<!-- categorie -->
+															</div>
+
 													</ul>
 												</nav>
 											</div>

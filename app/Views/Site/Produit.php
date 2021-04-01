@@ -24,9 +24,9 @@
 									<div class="summary entry-summary position-relative">
 
 										
-										<form enctype="multipart/form-data" method="post" class="cart" action="/Site/panier">
+										<form enctype="multipart/form-data" method="post" class="cart" action="<?=base_url("Site/panier/save/".$tableProduit["product_id"])?>">
 
-										<h1 class="mb-0 font-weight-bold text-7">Nom Produit</h1>
+										<h1 class="mb-0 font-weight-bold text-7"><?=$tableProduit['product_name']?></h1>
 
 
 										<div class="divider divider-small">
@@ -34,13 +34,13 @@
 										</div>
 
 										<p class="price mb-3">
-											<span class="sale text-color-dark">$15,00</span>
+											<span class="sale text-color-dark"><?=$tableProduit['price']?></span>
 										</p>
 
-										<p class="text-3-5 mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus nibh sed elimttis adipiscing. Fusce in hendrerit purus. Lorem ipsum dolor sit amet.</p>
+										<p class="text-3-5 mb-3"><?=$tableProduit['Description']?></p>
 
 										<ul class="list list-unstyled text-2">
-											<li class="mb-0">Disponibilité: <strong class="text-color-dark">AVAILABLE</strong></li>
+											<li class="mb-0">Disponibilité: <strong class="text-color-dark"><?php if($tableProduit["Disponibility"] == 1){ echo "EN STOCK";}else{ echo "RUPTURE DE STOCK";}?></strong></li>
 											
 										</ul>
 
@@ -61,44 +61,48 @@
 
 							<h4 class="mb-3">Related <strong>Products</strong></h4>
 							<div class="products row">
-								<div class="col">
-									<div class="owl-carousel owl-theme show-nav-title nav-dark mb-0" data-plugin-options="{'loop': false, 'autoplay': false,'items': 4, 'nav': true, 'dots': false, 'margin': 20, 'autoplayHoverPause': true, 'autoHeight': true}">
+							<div class="col">
+							<div class="owl-carousel owl-theme show-nav-title nav-dark mb-0" data-plugin-options="{'loop': false, 'autoplay': false,'items': 4, 'nav': true, 'dots': false, 'margin': 20, 'autoplayHoverPause': true, 'autoHeight': true}">
+							<?php if(isset($prodSimilaire)):
+								foreach($prodSimilaire as $produit):
+									$categorie = $tableCategorie->where("category_id",$produit["category_id"])->first(); ?>
 
 										<div class="product mb-0">
 											<div class="product-thumb-info border-0 mb-3">
 
 
 												<div class="addtocart-btn-wrapper">
-													<a href="/Site/produit" class="text-decoration-none addtocart-btn" data-tooltip data-original-title="Add to Cart">
+													<a href="<?=base_url("Site/produit/index/".$produit["product_id"])?>" class="text-decoration-none addtocart-btn" data-tooltip data-original-title="Add to Cart">
 														<i class="icons icon-bag"></i>
 													</a>
 												</div>
 												<a href="ajax/shop-product-quick-view.html" class="quick-view text-uppercase font-weight-semibold text-2">
 													QUICK VIEW
 												</a>
-												<a href="/Site/produit">
+												<a href="<?=base_url("Site/produit/index/".$produit["product_id"])?>">
 													<div class="product-thumb-info-image">
-														<img alt="" class="img-fluid" src="img/products/product-grey-1.jpg">
+														<img alt="" class="img-fluid" src="<?=base_url("Site/img/products/product-grey-1.jpg")?>">
 
 													</div>
 												</a>
 											</div>
 											<div class="d-flex justify-content-between">
-                                                <a href="#" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-1">electronics</a>
-                                                <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="shop-product-sidebar-right.html" class="text-color-dark text-color-hover-primary">Photo Camera</a></h3>
+                                                <a href="#" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-1"><?=$categorie["category_name"]?></a>
+                                                <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="shop-product-sidebar-right.html" class="text-color-dark text-color-hover-primary"><?=$produit['product_name']?></a></h3>
                                         	</div>
 											<div title="Rated 5 out of 5">
 												<input type="text" class="d-none" value="5" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'default', 'size':'xs'}">
 											</div>
 											<p class="price text-5 mb-3">
-												<span class="sale text-color-dark font-weight-semi-bold">$69,00</span>
+												<span class="sale text-color-dark font-weight-semi-bold"><?=$produit['price']?></span>
 										
 											</p>
 										</div>
-									</div>
-								</div>
-							</div>
-
+						<?php endforeach;
+						endif ?>		
+						</div>
+						</div>
+						</div>
 						</div>
 					</div>
 				</div>

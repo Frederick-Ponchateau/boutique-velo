@@ -13,7 +13,7 @@
 					</header>
 
 					<!-- start: page -->
-						<form class="" action="<?=base_url("Admin/Home/edit/".$tableProduit["product_id"])?>" method="post"enctype="multipart/form-data">
+						<form class="" action="<?=base_url("Admin/Home/edit/".$tableProduit["product_id"])?>" method="post" enctype="multipart/form-data">
 						<!-- Je cache mon champ(hidden) pour dire que je suis dans le mode modifier -->
                                                 <!-- je modifie -->
                                                 <?php if(isset($tableProduit["product_id"])){  ?>

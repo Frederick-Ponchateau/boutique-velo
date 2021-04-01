@@ -8,41 +8,45 @@
 						<div class="row products product-thumb-info-list" data-plugin-masonry data-plugin-options="{'layoutMode': 'fitRows'}">
 							
 
+									<?php if(isset($tableProduit)):
+										foreach($tableProduit as $produit):
+											$categorie = $tableCategorie->where("category_id",$produit["category_id"])->first();
+									?>
 							<div class="col-12 col-sm-6 col-lg-3">
+									<div class="product mb-0">
+										<div class="product-thumb-info border-0 mb-3">
 
-								<div class="product mb-0">
-									<div class="product-thumb-info border-0 mb-3">
+											
 
-										
+											<div class="addtocart-btn-wrapper">
+												<a href="<?=base_url("Site/produit/panier/".$produit["product_id"])?>" class="text-decoration-none addtocart-btn" data-tooltip data-original-title="Ajouter au panier">
+													<i class="icons icon-bag"></i>
+												</a>
+											</div>
 
-										<div class="addtocart-btn-wrapper">
-											<a href="/Site/produit" class="text-decoration-none addtocart-btn" data-tooltip data-original-title="Ajouter au panier">
-												<i class="icons icon-bag"></i>
+											<!-- <a href="ajax/shop-product-quick-view.html" class="quick-view text-uppercase font-weight-semibold text-2">
+												QUICK VIEW
+											</a> -->
+											<a href="<?=base_url("Site/produit/index/".$produit["product_id"])?>">
+												<div class="product-thumb-info-image">
+													<img alt="" class="img-fluid" src="<?= base_url("site/img/products/product-grey-1.jpg")?>">
+
+												</div>
 											</a>
 										</div>
-
-										<a href="ajax/shop-product-quick-view.html" class="quick-view text-uppercase font-weight-semibold text-2">
-											QUICK VIEW
-										</a>
-										<a href="/Site/produit">
-											<div class="product-thumb-info-image">
-												<img alt="" class="img-fluid" src="<?= base_url("site/img/products/product-grey-1.jpg")?>">
-
+										<div class="d-flex justify-content-between">
+											<div>
+												<a href="<?=base_url("Site/Home/categorie/".$categorie["category_id"])?>" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-1"><?=$categorie["category_name"]?></a>
+												<h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="<?=base_url("Site/produit/index/".$produit["product_id"])?>" class="text-color-dark text-color-hover-primary"><?=$produit["product_name"]?></a></h3>
 											</div>
-										</a>
-									</div>
-									<div class="d-flex justify-content-between">
-										<div>
-											<a href="#" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-1">electronics</a>
-											<h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="shop-product-sidebar-right.html" class="text-color-dark text-color-hover-primary">Photo Camera</a></h3>
 										</div>
+										<p>
+											<span class="sale text-color-dark font-weight-semi-bold"><?=$produit["price"]?> €</span>
+										</p>
 									</div>
-									<p>
-										<span class="sale text-color-dark font-weight-semi-bold">$199,00</span>
-									</p>
-								</div>
-								
 							</div>
+								<?php endforeach;
+								endif?>				
 						</div>
 						<div class="row mt-4">
 							<div class="col">

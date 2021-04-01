@@ -33,11 +33,22 @@ class Home extends BaseController
 			'tableCategorie' => $listeCategorie,
 			'tableProduit' => $listeProduit
 	   ];
-		echo view('Site/common/HeaderSite');
+		echo view('Site/common/HeaderSite',$data);
 		echo view('Site/home',$data);
 		echo view('Site/common/FooterSite');
 	}
-	public function categorie(){
-		
+	public function categorie($id=null){
+		$listeProduit = $this->produitModel->where("category_id",$id)->orderBy('product_id','DESC')->paginate(8);
+		$listeCategorie = $this->categorieModel;
+
+		$data = [
+			'page_title' => 'Categorie',
+			'tableCategorie' => $listeCategorie,
+			'tableProduit' => $listeProduit
+	   ];
+
+		echo view('Site/common/HeaderSite',$data);
+		echo view('Site/home',$data);
+		echo view('Site/common/FooterSite');
 	}
 }

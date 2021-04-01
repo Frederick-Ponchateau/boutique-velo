@@ -1,3 +1,4 @@
+			<?php  $total= null ?>
 			<div role="main" class="main shop pb-4">
 
 				<div class="container">
@@ -36,7 +37,11 @@
 											</tr>
 										</thead>
 										<tbody>
-
+											<?php if(isset($ordersItems)):
+											foreach($ordersItems as $order):
+												$Produit =$tableProduit->where("product_id",$order["product_ID"])->first();
+												
+												$total += $Produit["price"] ;?>
 											<tr class="cart_table_item">
 												<td class="product-thumbnail">
 													<div class="product-thumbnail-wrapper">
@@ -44,18 +49,20 @@
 															<i class="fas fa-times"></i>
 														</a>
 														<a href="/Site/produit" class="product-thumbnail-image" title="Photo Camera">
-															<img width="90" height="90" alt="" class="img-fluid" src="img/products/product-grey-1.jpg">
+															<img width="90" height="90" alt="" class="img-fluid" src="<?= base_url("site/img/products/product-grey-1.jpg")?>">
 														</a>
 													</div>
 												</td>
 												<td class="product-name">
-													<a href="/Site/produit" class="font-weight-semi-bold text-color-dark text-color-hover-primary text-decoration-none">Photo Camera</a>
+													<a href="/Site/produit" class="font-weight-semi-bold text-color-dark text-color-hover-primary text-decoration-none"><?= $Produit["product_name"] ?></a>
 												</td>
 												<td class="product-price">
-													<span class="amount font-weight-medium text-color-grey">$59</span>
+													<span class="amount font-weight-medium text-color-grey"><?= $Produit["price"] ?></span>
 												</td>
 												
 											</tr>
+											<?php endforeach;
+											endif ?>
 										</tbody>
 									</table>
 								</div>
@@ -72,7 +79,7 @@
 													<strong class="text-color-dark text-3-5">Total</strong>
 												</td>
 												<td class="text-right">
-													<strong class="text-color-dark"><span class="amount text-color-dark text-5">$431</span></strong>
+													<strong class="text-color-dark"><span class="amount text-color-dark text-5"><?=$total." €"?></span></strong>
 												</td>
 											</tr>
 										</tbody>
