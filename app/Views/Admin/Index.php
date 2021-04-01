@@ -22,7 +22,7 @@
 					</div>
 					<div class="row justify-content-center justify-content-sm-between">
 						<div class="col-sm-auto text-center mb-4 mb-sm-0 mt-2 mt-sm-0">
-							<a href="/produit/add" class="btn btn-primary btn-md font-weight-semibold btn-py-2 px-4" >+ Add Product</a>
+							<a href="<?=base_url("admin/Home/edit")?>" class="btn btn-primary btn-md font-weight-semibold btn-py-2 px-4" >+ Add Product</a>
 						</div>
 					</div>
 					<div class="row row-gutter-sm mb-5">

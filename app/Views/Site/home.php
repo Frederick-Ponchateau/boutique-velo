@@ -9,6 +9,7 @@
 							
 
 							<div class="col-12 col-sm-6 col-lg-3">
+
 								<div class="product mb-0">
 									<div class="product-thumb-info border-0 mb-3">
 
@@ -40,6 +41,7 @@
 										<span class="sale text-color-dark font-weight-semi-bold">$199,00</span>
 									</p>
 								</div>
+								
 							</div>
 						</div>
 						<div class="row mt-4">

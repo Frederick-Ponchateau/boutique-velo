@@ -131,7 +131,7 @@
 				            
 				                <ul class="nav nav-main">
 				                    <li>
-				                        <a class="nav-link" href="/admin/home/index">
+				                        <a class="nav-link" href="<?=base_url("admin/home/index")?>">
 				                            <i class="bx bx-home-alt" aria-hidden="true"></i>
 				                            <span>Dashboard</span>
 				                        </a>                        
@@ -145,27 +145,27 @@
 				                        <ul class="nav nav-children">
 				                            
 				                            <li>
-				                                <a class="nav-link" href="/admin/Home/edit">
-				                                    - Ajouter / Modifier Produit
+				                                <a class="nav-link" href="<?=base_url("admin/Home/edit")?>">
+				                                    - Ajouter Produit
 				                                </a>
 				                            </li>
 				                            <li>
-				                                <a class="nav-link" href="/admin/Categorie/index">
+				                                <a class="nav-link" href="<?=base_url("admin/Categorie/index")?>">
 				                                    - Liste Categorie
 				                                </a>
 				                            </li>
 				                            <li>
-				                                <a class="nav-link" href="/admin/Souscategorie/index">
+				                                <a class="nav-link" href="<?=base_url("admin/Souscategorie/index")?>">
 				                                    - Liste Sous-Categorie
 				                                </a>
 				                            </li>
 				                            <li>
-				                                <a class="nav-link" href="/admin/Commande/index">
+				                                <a class="nav-link" href="<?=base_url("admin/Commande/index")?>">
 				                                    - Liste Commandes
 				                                </a>
 				                            </li>
 											<li>
-				                                <a class="nav-link" href="/admin/Utilisateur/index">
+				                                <a class="nav-link" href="<?=base_url("admin/Utilisateur/index")?>">
 				                                    - Liste Utilisateur
 				                                </a>
 				                            </li>

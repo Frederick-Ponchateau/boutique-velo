@@ -3,7 +3,7 @@
 		<script src="<?=base_url("admin/vendor/jquery/jquery.js")?>"></script>
 		<script src="<?=base_url("admin/vendor/jquery-browser-mobile/jquery.browser.mobile.js")?>"></script>
 		<script src="<?=base_url("admin/vendor/jquery-cookie/jquery.cookie.js")?>"></script>
-		<script src="<?=base_url("admin/master/style-switcher/style.switcher.js")?>"></script>
+		<!-- <script src="<?php//base_url("admin/master/style-switcher/style.switcher.js")?>"></script> -->
 		<script src="<?=base_url("admin/vendor/popper/umd/popper.min.js")?>"></script>
 		<script src="<?=base_url("admin/vendor/bootstrap/js/bootstrap.js")?>"></script>
 		<script src="<?=base_url("admin/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js")?>"></script>

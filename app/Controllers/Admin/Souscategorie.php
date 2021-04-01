@@ -69,7 +69,7 @@ class Souscategorie extends BaseController
         }
 		$data = [
 			'page_title' => 'Sous-Categorie',
-			'SousCategorie' => $this->souscategoModel->orderBy('sous_category_name','ASC')->findAll()
+			'SousCategorie' => $this->souscategoModel->orderBy('sous_categorie_name','ASC')->findAll()
 	   ];
 
 		echo view('admin/common/HeaderAdmin');
