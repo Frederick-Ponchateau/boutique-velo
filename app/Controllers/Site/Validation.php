@@ -35,14 +35,15 @@ class Validation extends BaseController
 		$listeUser = $this->userModel->where("user_id",$listeOrders["customer_ID"])->first();
 		$listeOrdersItems = $this->ordersItemsModel->where("customer_ID",$listeUser["user_id"])->where("order_ID",$listeOrders["order_ID"])->findAll();
 		$listeProduit = $this->produitModel;
-		var_dump($listeOrdersItems);
+		//var_dump($listeOrdersItems);
 
 		$data = [
 			'page_title' 		=> 'Validation',
 			'tableCategorie'	=> $listeCategorie,
 			'tableProduit' 		=> $listeProduit,
 			'user'         		=> $listeUser, 
-			"panier"       		=> $listeOrders
+			"panier"       		=> $listeOrders,
+			"elementPanier"		=> $listeOrdersItems
 			
 	   ];
 
@@ -65,7 +66,7 @@ class Validation extends BaseController
 		    $order =  $this->ordersModel->where("customer_ID",$userID)->orderBy('order_ID', 'DESC')->first();
 			//var_dump($session->get("total"));
 		
-		 var_dump($data_save);
+		// var_dump($data_save);
 		 $maj =  $this->ordersItemsModel
 		 ->where("customer_ID",$userID)
 		 ->where("order_ID",0)

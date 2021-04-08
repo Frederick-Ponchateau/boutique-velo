@@ -54,25 +54,33 @@
 							</div>
 							<div class="card border-width-3 border-radius-0 border-color-hover-dark mb-4">
 								<div class="card-body">
-									<h4 class="font-weight-bold text-uppercase text-4 mb-3">Your Order</h4>
+									<h4 class="font-weight-bold text-uppercase text-4 mb-3">Votre Commande</h4>
 									<table class="shop_table cart-totals mb-0">
 										<tbody>
 											<tr>
 												<td colspan="2" class="border-top-0">
-													<strong class="text-color-dark">Product</strong>
+													<strong class="text-color-dark">Produit</strong>
 												</td>
 											</tr>
-											<?php if(isset())  ?>
-											<tr>
-												<td>
-													<strong class="d-block text-color-dark line-height-1 font-weight-semibold">Black Porto Smartwatch <span class="product-qty">x1</span></strong>
-													<span class="text-1">COLOR BLACK</span>
-												</td>
-												<td class="text-right align-top">
-													<span class="amount font-weight-medium text-color-grey">$15</span>
-												</td>
-											</tr>
-											
+											<?php 
+												if(isset($elementPanier)){ 
+													foreach($elementPanier as $element){	
+														$produit = $tableProduit->where("product_id",$element['product_ID'])->first();
+														$categorie = $tableCategorie->where("category_id",$produit["category_id"])->first(); 	
+														?>
+														<tr>
+															<td>
+																<strong class="d-block text-color-dark line-height-1 font-weight-semibold"><?=  $produit["product_name"]  ?><span class="product-qty">x1</span></strong>
+																<span class="text-1"><?= $categorie["category_name"] ?></span>
+															</td>
+															<td class="text-right align-top">
+																<span class="amount font-weight-medium text-color-grey"><?=  $produit["price"]  ?></span>
+															</td>
+														</tr>
+														<?php 
+													} 
+												}	 
+											?>
 											
 											<tr class="total">
 												<td>
