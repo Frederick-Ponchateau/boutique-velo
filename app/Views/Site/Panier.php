@@ -19,6 +19,8 @@
 						</div>
 					</div>
 					<div class="row pb-4 mb-5">
+					<!-- je verifie si le panier est remplie -->
+						<?php 	if(!empty($ordersItems)){  ?>
 						<div class="col-lg-8 mb-5 mb-lg-0">
 							<form method="post" action="">
 								<div class="table-responsive">
@@ -37,36 +39,53 @@
 											</tr>
 										</thead>
 										<tbody>
-											<?php if(isset($ordersItems)):
+										
+											<?php
+											
+											/***************** 
+											* * -Boucle sur le nombbre d'articles present dans le panier 
+											*****************/
 											foreach($ordersItems as $order):
+												/***************** 
+												 * * -Pour chaque produit je liste le detail 
+												 * * avec id du produit
+												 *****************/
 												$Produit =$tableProduit->where("product_id",$order["product_ID"])->first();
-												
-												$total += $Produit["price"] ;?>
+												/***************** 
+											 	* * - Calcul du total pour chaque produit ajouter au panier 
+												* * -Puis transmet le total a la session "total"
+											 	*****************/
+												$total += $Produit["price"] ;
+												session()->set(["total"=>$total]);
+												?>
 											<tr class="cart_table_item">
 												<td class="product-thumbnail">
 													<div class="product-thumbnail-wrapper">
-														<a href="#" class="product-thumbnail-remove" title="Remove Product">
+														<a href="<?=base_url("Site/panier/delete/".$order["order_Items_ID"])?>" class="product-thumbnail-remove" title="Remove Product">
 															<i class="fas fa-times"></i>
 														</a>
-														<a href="/Site/produit" class="product-thumbnail-image" title="Photo Camera">
+														<a href="<?=base_url("Site/produit")?>" class="product-thumbnail-image" title="Photo Camera">
 															<img width="90" height="90" alt="" class="img-fluid" src="<?= base_url("site/img/products/product-grey-1.jpg")?>">
 														</a>
 													</div>
 												</td>
 												<td class="product-name">
-													<a href="/Site/produit" class="font-weight-semi-bold text-color-dark text-color-hover-primary text-decoration-none"><?= $Produit["product_name"] ?></a>
+													<a href="<?=base_url("Site/produit")?>" class="font-weight-semi-bold text-color-dark text-color-hover-primary text-decoration-none"><?= $Produit["product_name"] ?></a>
 												</td>
 												<td class="product-price">
 													<span class="amount font-weight-medium text-color-grey"><?= $Produit["price"] ?></span>
 												</td>
 												
 											</tr>
-											<?php endforeach;
-											endif ?>
+											<?php 
+											
+											endforeach;?>
+										
 										</tbody>
 									</table>
 								</div>
 							</form>
+						
 						</div>
 						<div class="col-lg-4">
 							<div class="card border-width-3 border-radius-0 border-color-hover-dark" data-plugin-sticky data-plugin-options="{'minWidth': 991, 'containerSelector': '.row', 'padding': {'top': 85}}">
@@ -84,10 +103,16 @@
 											</tr>
 										</tbody>
 									</table>
-									<a href="/Site/validation" class="btn btn-dark btn-modern btn-block text-uppercase bg-color-hover-primary border-color-hover-primary border-radius-0 text-3 py-3">Proceed to Checkout <i class="fas fa-arrow-right ml-2"></i></a>
+									
+									<a href="<?=base_url("Site/Validation/valider")?>" class="btn btn-dark btn-modern btn-block text-uppercase bg-color-hover-primary border-color-hover-primary border-radius-0 text-3 py-3">Proceed to Checkout <i class="fas fa-arrow-right ml-2"></i></a>
 								</div>
 							</div>
 						</div>
+						<?php
+							}else
+								{?>
+								<h4>Votre panier est Vide</h4>
+							<?php } ?>
 					</div>
 				</div>
 
