@@ -6,20 +6,20 @@
 						<div class="col-lg-8">
 							<ul class="breadcrumb breadcrumb-dividers-no-opacity font-weight-bold text-6 justify-content-center my-5">
 								<li class="text-transform-none mr-2">
-									<a href="/Site/panier" class="text-decoration-none text-color-dark text-color-hover-primary">Shopping Cart</a>
+									<a href="<?= base_url("Site/panier")?>" class="text-decoration-none text-color-dark text-color-hover-primary">Shopping Cart</a>
 								</li>
-								<li class="text-transform-none text-color-dark mr-2">
-									<a href="shop-checkout.html" class="text-decoration-none text-color-dark text-color-hover-primary">Checkout</a>
-								</li>
+								
 								<li class="text-transform-none text-color-dark">
-									<a href="shop-order-complete.html" class="text-decoration-none text-color-primary">Order Complete</a>
+									<a href="<?= base_url("Site/Validation/index")?>"class="text-decoration-none text-color-primary">Order Complete</a>
 								</li>
 							</ul>
 						</div>
 					</div>
 
 					<div class="row justify-content-center">
+
 						<div class="col-lg-8">
+						<?php if(isset($panier)){?>
 							<div class="card border-width-3 border-radius-0 border-color-success">
 								<div class="card-body text-center">
 									<p class="text-color-dark font-weight-bold text-4-5 mb-0"><i class="fas fa-check text-color-success mr-1"></i> Merci. Nous avons confirmé votre commande.</p>
@@ -54,6 +54,7 @@
 							</div>
 							<div class="card border-width-3 border-radius-0 border-color-hover-dark mb-4">
 								<div class="card-body">
+								
 									<h4 class="font-weight-bold text-uppercase text-4 mb-3">Votre Commande</h4>
 									<table class="shop_table cart-totals mb-0">
 										<tbody>
@@ -94,7 +95,14 @@
 									</table>
 								</div>
 							</div>
-							
+						<?php }else{ ?>
+							<div class="card border-width-3 border-radius-0 border-color-danger">
+							<div class="card-body text-center">
+								<p class="text-color-dark font-weight-bold text-4-5 mb-0"><i class="fas fa-times text-color-danger mr-1"></i> Erreur.Nous avons pas pu confirmer votre commande</p>
+							</div>
+						</div>
+
+						<?php }	?>
 						</div>
 					</div>
 

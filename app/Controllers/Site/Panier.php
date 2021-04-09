@@ -8,11 +8,14 @@ use App\Controllers\BaseController;
 use App\Models\CategorieModel;
 use App\Models\ProduitModel;
 use App\Models\OrdersItemsModel;
+use App\Models\UserModel;
 class Panier extends BaseController
 {
 	public $produitModel =null;
 	public $categorieModel=null;
 	public $ordersItemsModel=null;
+	public $userModel=null;
+
 	public function __construct(){
 		parent::__construct();
 		/********************************
@@ -21,6 +24,7 @@ class Panier extends BaseController
 		$this->categorieModel = new CategorieModel();
 		$this->produitModel = new ProduitModel();
 		$this->ordersItemsModel = new OrdersItemsModel();
+		$this->userModel = new UserModel();
 
 	}
 	public function index()
@@ -46,7 +50,15 @@ class Panier extends BaseController
 			* * et le numero de commande si il est = 0 tout les article correspondant
 		    *********************************/
 			$panier = $this->ordersItemsModel->where('customer_ID',$userID)->where("order_ID",0)->findAll();
-	   }
+	   }else{
+		   $panier=null;
+		   $cookie=   $this->request->getCookie('user_id');
+			if($cookie){
+				$user=	$this->userModel->where("key",$cookie)->first();
+				$panier = $this->ordersItemsModel->where('customer_ID',$user["user_id"])->where("order_ID",0)->findAll();
+
+			}
+		}
 		$data = [
 			'page_title' => 'Produit',
 			'tableCategorie' => $listeCategorie,

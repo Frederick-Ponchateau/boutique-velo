@@ -8,7 +8,7 @@
 						<div class="row products product-thumb-info-list" data-plugin-masonry data-plugin-options="{'layoutMode': 'fitRows'}">
 							
 
-									<?php if(isset($tableProduit)):
+									<?php if(isset($tableProduit)){
 										foreach($tableProduit as $produit):
 											$categorie = $tableCategorie->where("category_id",$produit["category_id"])->first();
 									?>
@@ -46,17 +46,14 @@
 									</div>
 							</div>
 								<?php endforeach;
-								endif?>				
+								}?>				
 						</div>
+						
 						<div class="row mt-4">
 							<div class="col">
-								<ul class="pagination float-right">
-									<li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-left"></i></a></li>
-									<li class="page-item active"><a class="page-link" href="#">1</a></li>
-									<li class="page-item"><a class="page-link" href="#">2</a></li>
-									<li class="page-item"><a class="page-link" href="#">3</a></li>
-									<a class="page-link" href="#"><i class="fas fa-angle-right"></i></a>
-								</ul>
+								
+								<?= $pager->links("group1","default_porto") ?>
+									
 							</div>
 						</div>
 					</div>

@@ -72,12 +72,12 @@
 											</div>
 											<div class="header-extra-info-text">
 												<label class="text-1 font-weight-semibold text-color-default">Contactez nous au </label>
-												<strong class="text-4"><a href="tel:+1234567890" class="text-color-hover-primary text-decoration-none">+123 4567 890</a></strong>
+												<strong class="text-4"><a href="tel:+1234567890" class="text-color-hover-primary text-decoration-none">+596 696442058</a></strong>
 											</div>
 										</li>
 									</ul>
 									<div class="d-flex col-auto col-lg-2 pr-0 pl-0 pl-xl-3">
-										<ul class="header-extra-info">
+									<ul class="header-extra-info">
 											<li class="ml-0 ml-xl-4">
 												<div class="header-extra-info-icon">
 													<a href="<?=base_url("login")?>" class="text-decoration-none text-color-dark text-color-hover-primary text-2">
@@ -85,42 +85,17 @@
 													</a>
 												</div>
 											</li>
-											
 										</ul>
-										<div class="header-nav-features pl-0 ml-1">
-											<div class="header-nav-feature header-nav-features-cart header-nav-features-cart-big d-inline-flex top-2 ml-2">
-												<a href="#" class="header-nav-features-toggle">
-													<img src="img/icons/icon-cart-big.svg" height="30" alt="" class="header-nav-top-icon-img">
-													<span class="cart-info bag ">
-														
-													</span>
-												</a>
-												<div class="header-nav-features-dropdown" id="headerTopCartDropdown">
-													<ol class="mini-products-list">
-														<li class="item">
-															<a href="#" title="Camera X1000" class="product-image"><img src="img/products/product-1.jpg" alt="Camera X1000"></a>
-															<div class="product-details">
-																<p class="product-name">
-																	<a href="#">Camera X1000 </a>
-																</p>
-																<p class="qty-price">
-																	 1X <span class="price">$890</span>
-																</p>
-																<a href="#" title="Remove This Item" class="btn-remove"><i class="fas fa-times"></i></a>
-															</div>
-														</li>
-													</ol>
-													<div class="totals">
-														<span class="label">Total:</span>
-														<span class="price-total"><span class="price">$890</span></span>
-													</div>
-													<div class="actions">
-														<a class="btn btn-dark" href="#">View Cart</a>
-														<a class="btn btn-primary" href="#">Checkout</a>
-													</div>
+										<ul class="header-extra-info">
+											<li class="ml-0 ml-xl-4">
+												<div class="header-extra-info-icon">
+													<a href="<?=base_url("Site/panier")?>" class="text-decoration-none text-color-dark text-color-hover-primary text-2">
+														<i class="fas fa-shopping-cart"></i>
+													</a>
 												</div>
-											</div>
-										</div>
+											</li>
+										</ul>
+										
 									</div>
 								</div>
 							</div>
@@ -144,19 +119,19 @@
 														<li class="dropdown">
 															<a class="dropdown-item dropdown-toggle" href="<?=base_url("Site/home/index")?>">Categories</a>
 														</li>
-															<button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-																<span class="sr-only">Toggle Dropdown</span>
-															</button>
-															<div class="dropdown-menu">
-															<?php if(isset($tableCategorie)): 
-															$listeCategorie = $tableCategorie->orderBy('category_name','ASC')->findAll();
-																	foreach($listeCategorie as $categorie):?>
-																<div role="separator" class="dropdown-divider"></div>
-																<li><a class="dropdown-item" href="<?=base_url("Site/Home/categorie/".$categorie["category_id"])?>"><?=$categorie["category_name"]?></a></li>
-																<?php endforeach;
-																endif?>
-															<!-- categorie -->
-															</div>
+														<button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+															<span class="sr-only">Toggle Dropdown</span>
+														</button>
+														<div class="dropdown-menu">
+														<?php if(isset($tableCategorie)): 
+														$listeCategorie = $tableCategorie->orderBy('category_name','ASC')->findAll();
+																foreach($listeCategorie as $categorie):?>
+															<div role="separator" class="dropdown-divider"></div>
+															<li><a class="dropdown-item" href="<?=base_url("Site/Home/categorie/".$categorie["category_id"])?>"><?=$categorie["category_name"]?></a></li>
+															<?php endforeach;
+															endif?>
+														<!-- categorie -->
+														</div>
 
 													</ul>
 												</nav>

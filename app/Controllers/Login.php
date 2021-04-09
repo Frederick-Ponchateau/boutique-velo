@@ -32,6 +32,38 @@ class Login extends Controller
                     'logged_in'     => TRUE
                 ];
                 $session->set($ses_data);
+                if(empty($data["key"])){    
+                    $cookie = [
+                        'name'   => 'user_id',
+                        'value'  => sha1(md5(microtime(true).mt_rand(10000,50000))),
+                        'expire' => '36500'
+                    
+                ];
+                
+                $this->response->setCookie($cookie)->send();
+                $test=   $this->response->getCookie('user_id');
+                dd($test);
+                $data_save =[
+                    'key'   => $test["value"]
+                ];
+            
+                $model->where('user_id',$data['user_id'])
+                ->set($data_save)
+                ->update();
+                }else{
+                    $cookie = [
+                        'name'   => 'user_id',
+                        'value'  => $data["key"],
+                        'expire' => '36500'
+                    
+                ];
+                
+                $this->response->setCookie($cookie)->send();
+                $test=   $this->response->getCookie('user_id');
+                dd($test);
+                }
+
+
                 return redirect()->to('/site/home');
             }else{
                 $session->setFlashdata('msg', 'Wrong Password');
